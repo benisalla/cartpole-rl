@@ -1,0 +1,82 @@
+{
+  "ppo-frame-cnn": {
+    "method": "ppo",
+    "obs": "frame",
+    "net": "cnn",
+    "seed": 0,
+    "params": 330211,
+    "steps": 50176,
+    "episodes": 2379,
+    "wall_time": 272.3,
+    "solved_at": null,
+    "final_eval": {
+      "mean": 16.65,
+      "std": 9.296639177681362,
+      "min": 8.0,
+      "max": 34.0,
+      "success_rate": 0.0,
+      "solved": false,
+      "episodes": 20
+    }
+  },
+  "ppo-frame-diff-cnn": {
+    "method": "ppo",
+    "obs": "frame-diff",
+    "net": "cnn",
+    "seed": 0,
+    "params": 330611,
+    "steps": 50176,
+    "episodes": 2367,
+    "wall_time": 300.7,
+    "solved_at": null,
+    "final_eval": {
+      "mean": 27.05,
+      "std": 10.622970394385932,
+      "min": 10.0,
+      "max": 46.0,
+      "success_rate": 0.0,
+      "solved": false,
+      "episodes": 20
+    }
+  },
+  "ppo-frame-diff-rescnn": {
+    "method": "ppo",
+    "obs": "frame-diff",
+    "net": "rescnn",
+    "seed": 0,
+    "params": 335251,
+    "steps": 50176,
+    "episodes": 2170,
+    "wall_time": 346.3,
+    "solved_at": null,
+    "final_eval": {
+      "mean": 32.7,
+      "std": 15.189140857862897,
+      "min": 9.0,
+      "max": 72.0,
+      "success_rate": 0.0,
+      "solved": false,
+      "episodes": 20
+    }
+  },
+  "reinforce-baseline-frame-diff-cnn": {
+    "method": "reinforce-baseline",
+    "obs": "frame-diff",
+    "net": "cnn",
+    "seed": 0,
+    "params": 330611,
+    "steps": 50082,
+    "episodes": 1622,
+    "wall_time": 314.7,
+    "solved_at": null,
+    "final_eval": {
+      "mean": 37.0,
+      "std": 13.722244714331545,
+      "min": 21.0,
+      "max": 66.0,
+      "success_rate": 0.0,
+      "solved": false,
+      "episodes": 20
+    }
+  }
+}

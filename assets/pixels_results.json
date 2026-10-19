@@ -1,0 +1,58 @@
+[
+  {
+    "label": "ppo [frame, cnn]",
+    "params": 330211,
+    "steps": 50176,
+    "episodes": 2379,
+    "solved_step": null,
+    "solved_episode": null,
+    "solved_time": null,
+    "wall_time": 272.3,
+    "eval_mean": 16.65,
+    "eval_std": 9.296639177681362,
+    "success": 0.0,
+    "eval_episodes": 20
+  },
+  {
+    "label": "reinforce-baseline [frame-diff, cnn]",
+    "params": 330611,
+    "steps": 50082,
+    "episodes": 1622,
+    "solved_step": null,
+    "solved_episode": null,
+    "solved_time": null,
+    "wall_time": 314.7,
+    "eval_mean": 37.0,
+    "eval_std": 13.722244714331545,
+    "success": 0.0,
+    "eval_episodes": 20
+  },
+  {
+    "label": "ppo [frame-diff, cnn]",
+    "params": 330611,
+    "steps": 50176,
+    "episodes": 2367,
+    "solved_step": null,
+    "solved_episode": null,
+    "solved_time": null,
+    "wall_time": 300.7,
+    "eval_mean": 27.05,
+    "eval_std": 10.622970394385932,
+    "success": 0.0,
+    "eval_episodes": 20
+  },
+  {
+    "label": "ppo [frame-diff, rescnn]",
+    "params": 335251,
+    "steps": 50176,
+    "episodes": 2170,
+    "solved_step": null,
+    "solved_episode": null,
+    "solved_time": null,
+    "wall_time": 346.3,
+    "eval_mean": 32.7,
+    "eval_std": 15.189140857862897,
+    "success": 0.0,
+    "eval_episodes": 20
+  }
+]

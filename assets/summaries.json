@@ -1,0 +1,291 @@
+{
+  "a2c": {
+    "method": "a2c",
+    "obs": "state",
+    "net": "mlp",
+    "seed": 0,
+    "params": 34691,
+    "steps": 100032,
+    "episodes": 1223,
+    "wall_time": 22.3,
+    "solved_at": {
+      "step": 100000,
+      "episode": 1223,
+      "time": 18.1618831329979
+    },
+    "final_eval": {
+      "mean": 500.0,
+      "std": 0.0,
+      "min": 500.0,
+      "max": 500.0,
+      "success_rate": 1.0,
+      "solved": true,
+      "episodes": 100
+    }
+  },
+  "actor-critic": {
+    "method": "actor-critic",
+    "obs": "state",
+    "net": "mlp",
+    "seed": 0,
+    "params": 34691,
+    "steps": 20000,
+    "episodes": 168,
+    "wall_time": 58.9,
+    "solved_at": {
+      "step": 20000,
+      "episode": 167,
+      "time": 51.90162864301237
+    },
+    "final_eval": {
+      "mean": 496.27,
+      "std": 11.907018938424512,
+      "min": 437.0,
+      "max": 500.0,
+      "success_rate": 0.93,
+      "solved": true,
+      "episodes": 100
+    }
+  },
+  "double-dqn": {
+    "method": "double-dqn",
+    "obs": "state",
+    "net": "mlp",
+    "seed": 0,
+    "params": 17410,
+    "steps": 30000,
+    "episodes": 382,
+    "wall_time": 85.9,
+    "solved_at": {
+      "step": 30000,
+      "episode": 381,
+      "time": 78.49282854702324
+    },
+    "final_eval": {
+      "mean": 500.0,
+      "std": 0.0,
+      "min": 500.0,
+      "max": 500.0,
+      "success_rate": 1.0,
+      "solved": true,
+      "episodes": 100
+    }
+  },
+  "dqn": {
+    "method": "dqn",
+    "obs": "state",
+    "net": "mlp",
+    "seed": 0,
+    "params": 17410,
+    "steps": 50000,
+    "episodes": 525,
+    "wall_time": 167.1,
+    "solved_at": {
+      "step": 50000,
+      "episode": 524,
+      "time": 155.59521600898006
+    },
+    "final_eval": {
+      "mean": 500.0,
+      "std": 0.0,
+      "min": 500.0,
+      "max": 500.0,
+      "success_rate": 1.0,
+      "solved": true,
+      "episodes": 100
+    }
+  },
+  "dueling-dqn": {
+    "method": "dueling-dqn",
+    "obs": "state",
+    "net": "mlp",
+    "seed": 0,
+    "params": 17539,
+    "steps": 20000,
+    "episodes": 330,
+    "wall_time": 51.4,
+    "solved_at": {
+      "step": 20000,
+      "episode": 329,
+      "time": 42.43973145799828
+    },
+    "final_eval": {
+      "mean": 477.15,
+      "std": 46.902105496448655,
+      "min": 284.0,
+      "max": 500.0,
+      "success_rate": 0.75,
+      "solved": true,
+      "episodes": 100
+    }
+  },
+  "dueling-dqn-per-nstep3": {
+    "method": "dueling-dqn",
+    "obs": "state",
+    "net": "mlp",
+    "seed": 0,
+    "params": 17539,
+    "steps": 20000,
+    "episodes": 236,
+    "wall_time": 55.8,
+    "solved_at": {
+      "step": 20000,
+      "episode": 235,
+      "time": 48.937524806009606
+    },
+    "final_eval": {
+      "mean": 477.58,
+      "std": 44.79892409422351,
+      "min": 333.0,
+      "max": 500.0,
+      "success_rate": 0.76,
+      "solved": true,
+      "episodes": 100
+    },
+    "tag": "per-nstep3"
+  },
+  "mc-control": {
+    "method": "mc-control",
+    "obs": "state",
+    "net": "table",
+    "seed": 0,
+    "params": 1728,
+    "steps": 115000,
+    "episodes": 2228,
+    "wall_time": 14.3,
+    "solved_at": {
+      "step": 115000,
+      "episode": 2227,
+      "time": 11.920591736008646
+    },
+    "final_eval": {
+      "mean": 500.0,
+      "std": 0.0,
+      "min": 500.0,
+      "max": 500.0,
+      "success_rate": 1.0,
+      "solved": true,
+      "episodes": 100
+    }
+  },
+  "ppo": {
+    "method": "ppo",
+    "obs": "state",
+    "net": "mlp",
+    "seed": 0,
+    "params": 34691,
+    "steps": 15104,
+    "episodes": 183,
+    "wall_time": 11.6,
+    "solved_at": {
+      "step": 15000,
+      "episode": 183,
+      "time": 6.720785677985987
+    },
+    "final_eval": {
+      "mean": 479.57,
+      "std": 41.80962927364939,
+      "min": 349.0,
+      "max": 500.0,
+      "success_rate": 0.77,
+      "solved": true,
+      "episodes": 100
+    }
+  },
+  "q-learning": {
+    "method": "q-learning",
+    "obs": "state",
+    "net": "table",
+    "seed": 0,
+    "params": 1728,
+    "steps": 40000,
+    "episodes": 1338,
+    "wall_time": 6.5,
+    "solved_at": {
+      "step": 40000,
+      "episode": 1337,
+      "time": 4.185905163001735
+    },
+    "final_eval": {
+      "mean": 499.68,
+      "std": 3.1839597987411836,
+      "min": 468.0,
+      "max": 500.0,
+      "success_rate": 0.99,
+      "solved": true,
+      "episodes": 100
+    }
+  },
+  "reinforce": {
+    "method": "reinforce",
+    "obs": "state",
+    "net": "mlp",
+    "seed": 0,
+    "params": 17410,
+    "steps": 20196,
+    "episodes": 344,
+    "wall_time": 17.4,
+    "solved_at": {
+      "step": 20000,
+      "episode": 343,
+      "time": 10.92620786698535
+    },
+    "final_eval": {
+      "mean": 478.84,
+      "std": 38.330071745302014,
+      "min": 368.0,
+      "max": 500.0,
+      "success_rate": 0.73,
+      "solved": true,
+      "episodes": 100
+    }
+  },
+  "reinforce-baseline": {
+    "method": "reinforce-baseline",
+    "obs": "state",
+    "net": "mlp",
+    "seed": 0,
+    "params": 34691,
+    "steps": 15324,
+    "episodes": 211,
+    "wall_time": 9.3,
+    "solved_at": {
+      "step": 15000,
+      "episode": 210,
+      "time": 4.536859526997432
+    },
+    "final_eval": {
+      "mean": 487.33,
+      "std": 29.51984247925453,
+      "min": 357.0,
+      "max": 500.0,
+      "success_rate": 0.84,
+      "solved": true,
+      "episodes": 100
+    }
+  },
+  "sarsa": {
+    "method": "sarsa",
+    "obs": "state",
+    "net": "table",
+    "seed": 0,
+    "params": 1728,
+    "steps": 60000,
+    "episodes": 1866,
+    "wall_time": 8.4,
+    "solved_at": {
+      "step": 60000,
+      "episode": 1865,
+      "time": 6.089979551004944
+    },
+    "final_eval": {
+      "mean": 499.68,
+      "std": 3.1839597987411836,
+      "min": 468.0,
+      "max": 500.0,
+      "success_rate": 0.99,
+      "solved": true,
+      "episodes": 100
+    }
+  }
+}

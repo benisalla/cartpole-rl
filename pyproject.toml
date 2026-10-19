@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cartpole-rl"
+version = "0.1.0"
+description = "CartPole solved every way: tabular Q-learning, SARSA and Monte Carlo control, DQN / double / dueling DQN, REINFORCE, actor-critic, A2C, PPO and pixel-based CNN policies in one PyTorch code base, compared on the same environment."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = [
+  "reinforcement-learning", "cartpole", "gymnasium", "dqn", "ppo", "a2c", "reinforce",
+  "actor-critic", "q-learning", "sarsa", "policy-gradient", "pytorch", "educational",
+]
+dependencies = [
+  "numpy>=1.24",
+  "torch>=2.4",
+  "gymnasium[classic-control]>=1.0",
+  "matplotlib>=3.7",
+  "pillow>=9.0",
+]
+
+[project.scripts]
+cartpole-train = "cartpole_rl.train:main"
+cartpole-play = "cartpole_rl.play:main"
+cartpole-eval = "cartpole_rl.evaluate:main"
+cartpole-compare = "cartpole_rl.compare:main"
+
+[project.optional-dependencies]
+video = ["imageio>=2.31"]
+dev = ["pytest>=8", "ruff>=0.9", "nbformat>=5.10", "imageio>=2.31"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cartpole_rl"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = ["notebooks/*.ipynb", "legacy"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E731", "B905", "E402"]
+
+# `uv` users get the CPU-only torch wheels (plain `pip install -e .` ignores this block
+# and pulls the default wheels from PyPI).
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

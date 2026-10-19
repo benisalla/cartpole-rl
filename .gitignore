@@ -1,0 +1,17 @@
+data/
+checkpoints/
+runs/
+examples/output/
+.venv/
+*.pt
+*.gif
+!assets/*.gif
+*.mp4
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
