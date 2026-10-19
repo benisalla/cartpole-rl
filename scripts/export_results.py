@@ -1,4 +1,4 @@
-"""Rebuild the comparison reports and copy them (plus a GIF of the PPO agent) into assets/.
+"""Rebuild the comparison reports and copy them into assets/ (the GIFs come from make_gifs.py).
 
     python scripts/export_results.py            # after cartpole-compare runs into runs/compare, runs/pixels
 """
@@ -8,8 +8,6 @@ import shutil
 from pathlib import Path
 
 from cartpole_rl.compare import write_report
-from cartpole_rl.play import record
-from cartpole_rl.train import load_agent
 
 ASSETS = Path("assets")
 ASSETS.mkdir(exist_ok=True)
@@ -26,8 +24,5 @@ for src, prefix in ((Path("runs/compare"), ""), (Path("runs/pixels"), "pixels_")
                  for d in sorted(src.iterdir()) if (d / "history.json").exists()}
     (ASSETS / f"{prefix}summaries.json").write_text(json.dumps(summaries, indent=2))
 
-ckpt = Path("runs/compare/ppo/best.pt")
-if ckpt.exists():
-    agent, cfg = load_agent(str(ckpt))
-    print(record(agent, str(ASSETS / "ppo_cartpole.gif"), every=3, scale=0.4))
+print("GIFs: run scripts/make_gifs.py")
 print("assets:", sorted(p.name for p in ASSETS.iterdir()))

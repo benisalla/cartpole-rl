@@ -35,3 +35,16 @@ def test_compare_writes_table_and_figures(tmp_path):
         assert Path(out / f).exists()
     # the steps-to-solve chart is only drawn when at least one run solved
     assert Path(out / "steps_to_solve.png").exists() == ("| yes |" in md)
+
+
+def test_vs_random_grid_gif(tmp_path):
+    from PIL import Image
+
+    from cartpole_rl.play import RandomAgent, record_grid
+
+    gif = tmp_path / "grid.gif"
+    lengths = record_grid([("a", RandomAgent(0), "state"), ("b", RandomAgent(1), "state")], str(gif),
+                          seed=3, cols=2, every=5, scale=0.25, hold=2)
+    assert [lab for lab, _ in lengths] == ["a", "b"] and all(0 < n <= 500 for _, n in lengths)
+    im = Image.open(gif)
+    assert im.size == (2 * 150, 100 + 24) and im.n_frames > 1

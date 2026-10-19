@@ -36,5 +36,6 @@ method builds an agent that acts.
 * every other method runs, saves a checkpoint, reloads it and scores exactly the same on the
   same evaluation seeds,
 * the DQN prioritized + n-step flags, and pixel runs for PPO, REINFORCE and DQN, run end to end,
+* `record_grid` (the side-by-side before / after GIF) tiles the panels and captions as expected,
 * `cartpole-train`, `cartpole-eval`, `cartpole-play` (GIF) and `cartpole-compare` (table and
   figures) work from their `main` functions.

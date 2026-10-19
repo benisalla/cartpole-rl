@@ -21,6 +21,7 @@ cartpole-train --method reinforce-baseline
 cartpole-train --method actor-critic
 cartpole-train --method a2c
 cartpole-train --method ppo --record ppo.gif  # ~30 s, then a GIF of the agent
+cartpole-play checkpoints/ppo/best.pt --vs-random --out before_after.gif  # random vs trained
 cartpole-train --method ppo --obs frame-diff  # pixels: slow (rendering), short budget
 cartpole-train --method ppo --obs frame-diff --net rescnn
 ```

@@ -10,7 +10,24 @@ environment, same evaluation, same plots, so the methods can be compared with re
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c.svg)](https://pytorch.org)
 [![Gymnasium](https://img.shields.io/badge/gymnasium-CartPole--v1-0081a5.svg)](https://gymnasium.farama.org/environments/classic_control/cart_pole/)
-[![Tests](https://img.shields.io/badge/tests-52%20passing-brightgreen.svg)](docs/testing.md)
+[![Tests](https://img.shields.io/badge/tests-53%20passing-brightgreen.svg)](docs/testing.md)
+
+## Before and after training
+
+Same start state for every panel. Left: an agent that pushes at random, the pole falls after
+64 steps (random play averages about 22). Right: the trained PPO agent, balancing for the
+full 500 steps.
+
+![random agent vs trained PPO](assets/before_after.gif)
+
+One trained agent per family on that same start state, all from the checkpoints of the
+[results](#results) below:
+
+![one agent per family](assets/families_grid.gif)
+
+Regenerate both from saved checkpoints with `python scripts/make_gifs.py` (it trains a
+missing one with the defaults), or make your own side by side with
+`cartpole-play checkpoints/ppo/best.pt --vs-random --out before_after.gif`.
 
 Every method is one command with defaults that work on a laptop CPU in seconds to minutes,
 and every update rule is a few readable lines next to a comment that says *why* it is there.
@@ -143,10 +160,6 @@ What the runs show:
   mean those runs stopped at the first confirmed solve; with `--no-stop` they keep improving
   (or, for DQN, sometimes unlearn, which is why the best evaluated weights are kept).
 
-![PPO agent](assets/ppo_cartpole.gif)
-
-*The PPO agent from the table, one greedy episode on an unseen start state (500 / 500 steps).*
-
 ### Pixel observations: short runs, learning has only started
 
 Same evaluation, but from rendered frames (`--obs frame` / `frame-diff`, 40 x 80 grey crops),
@@ -192,7 +205,7 @@ src/cartpole_rl/
   compare.py         cartpole-compare: table + figures
   play.py            GIF / MP4 recording (cartpole-play)
   viz.py             curves and bar charts
-tests/               52 pytest tests, about 40 s on one CPU thread
+tests/               53 pytest tests, about 40 s on one CPU thread
 docs/                architecture, environment, training, evaluation, testing
 examples/            six numbered scripts
 notebooks/           build_notebook.py -> train_colab_kaggle.ipynb

@@ -62,5 +62,19 @@ for the curves. All table numbers come from greedy evaluation.
 ```bash
 cartpole-eval checkpoints/ppo/best.pt --episodes 100      # JSON with mean / std / success rate
 cartpole-play checkpoints/ppo/best.pt --out ppo.gif       # one greedy episode as a GIF (or .mp4)
+cartpole-play checkpoints/ppo/best.pt --vs-random --out before_after.gif   # random vs trained, same start
+python scripts/make_gifs.py                               # the README GIFs, from runs/compare checkpoints
 cartpole-compare --plot-only runs/compare                 # rebuild table + figures from saved runs
 ```
+
+## Seeing it: before / after GIFs
+
+`play.record_grid` plays several agents on the **same start state** and tiles their frames,
+with a caption per panel (name, step, "fell at step N" in red or "500 / 500 steps" in green).
+An agent whose pole falls stays on its last frame, so the comparison stays readable while the
+others keep going. `scripts/make_gifs.py` uses it for `assets/before_after.gif` (random agent
+vs trained PPO) and `assets/families_grid.gif` (random + Q-learning, double DQN, REINFORCE +
+baseline, A2C, PPO). It loads `runs/compare/<method>/best.pt` (or `--runs checkpoints`),
+trains any missing checkpoint with the defaults, and picks the first final-evaluation seed on
+which every trained agent lasts 500 steps (seed 100 001 for the README runs). Each GIF keeps
+one frame in 4-5, at 40% scale, with a 64-colour palette: about 0.3 and 0.5 MB.
